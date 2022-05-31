@@ -1,0 +1,81 @@
+
+POST http://localhost:3001/users/signup
+Content-Type: application/json
+
+{
+    "name": "Anuradha",
+    "age": 24,
+    "mobile": 564,
+    "email": "anuradha234@gmail.com",
+    "password": "Anuradhaa"
+}
+
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+    "email": "anuradha234@gmail.com",
+    "password": "Anuradhaa"
+}
+
+GET http://localhost:3001/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+GET http://localhost:3001/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+GET http://localhost:3001/usersdairy
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+GET http://localhost:3001/usersdairy/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+POST http://localhost:3001/usersdairy/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+{   
+    "userid": 2,
+    "description": "A Good Day"
+}
+
+PUT  http://localhost:3001/usersdairy/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+{   
+    "userid": 2,
+    "description": "Good Day"
+}
+
+DELETE http://localhost:3001/usersdairy/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+GET http://localhost:3001/usercredentials
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+POST http://localhost:3001/usercredentials/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+{   "userid":2,
+    "platform": "Buyjuice",
+    "email": "anuradha234@gmail.com",
+    "password":"anu123radha"
+}
+
+DELETE http://localhost:3001/usercredentials/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+PUT  http://localhost:3001/usercredentials/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
+
+{   
+    "platform": "juice",
+    "email": "anuradha234@gmail.com",
+    "password":"anu123radha"
+}
+
+GET http://localhost:3001/usercredentials/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDAwMTI2OCwiZXhwIjoxNjU0MDAyNDY4fQ.jUo_nd9Vf6aslpdTAkmZhRrjPhoNOJH44f5GMtDZAl8
