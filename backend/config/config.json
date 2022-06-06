@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "krupareddy",
+    "database": "dairyapplication",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+   "username": "postgres",
+    "password": "krupareddy",
+    "database": "dairyapplication_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+   "username": "postgres",
+    "password": "krupareddy",
+    "database": "dairyapplication_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
