@@ -1,0 +1,69 @@
+
+body{
+     background-color: #d6f1cf;
+}
+.main-text{
+     display: block;
+    height: 70px;
+    color: #080710;
+    width: 40%;
+    background-color:rgb(156, 226, 234);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.logout {
+  justify-content: center;
+  text-transform: uppercase;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  cursor: pointer;
+  outline: none;
+  margin-left: 1150px;
+  margin-top: 10px;
+  padding: 20px;
+  }
+
+.date{
+     margin-top: 50px;
+     margin-left: 10px;
+    width: 15%;
+    background-color: #a8d59d;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.user-credentials{
+       height: 400px;
+    width: 400px;
+    background-color: rgb(23, 21, 22);
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 35%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+.mainbutton-container{
+     margin-top: 50px;
+     margin-left: 10px;
+    width: 15%;
+    background-color: #a8d59d;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30%;
+    cursor: pointer;
+}
