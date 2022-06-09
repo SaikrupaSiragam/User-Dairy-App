@@ -3,6 +3,31 @@ const bcrypt = require('bcrypt');
 const jwtauthentication = require('../middlewares/authentication');
 const { body, validationResult } = require('express-validator');
 const usersdairy = require('../models').usersdairy;
+const multer=require('multer');
+const path=require('path');
+
+const storage=multer.diskStorage({
+    destination: (req, file, cb)=>{
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb)=>{
+        cb(null, Date.now()+path.extname(file.originalname))
+    }
+})
+exports.upload = multer({
+    storage: storage,
+    limits: { fileSize: 102400000 },
+    fileFilter: (req, file, cb) => {
+        console.log('File filter running..');
+          const fileTypes = /jpeg|jpg|png|gif/
+          const mimeType=fileTypes.test(file.mimetype)
+          const extname=fileTypes.test(path.extname(file.originalname))
+          if(mimeType && extname){
+              return cb(null,true)
+          }
+          cb('provide proper file format')
+        }
+}).single('image');
 
 exports.getDairy = [
     jwtauthentication,
@@ -35,6 +60,7 @@ exports.addEntryToDairy = [
             userid,
             description,
             date,
+            image:req.file.path
         };
         console.log(`userid ${userid} description: ${description}`);
         const errors = validationResult(req);
@@ -44,7 +70,7 @@ exports.addEntryToDairy = [
         } else {
             try {
                 const findEntry = await usersdairy.findOne({
-                    where: { description },
+                    where: { description,userid,date },
                 });
                 if (findEntry) {
                     return res.send({ status: 400, data: 'Entry already exist' });
@@ -79,6 +105,7 @@ exports.editEntry = [
                 }
                 else{
                     findEntry.description = req.body.description;
+                    findEntry.date=req.body.date;
                     await findEntry.save();
                     return res.send({ status: 200, data: 'Entry updated successfully' });
                 }
@@ -124,11 +151,12 @@ exports.entryByDate = [
     async (req, res) => {
         console.log("inside entrybydate");
         const date = req.params.date;
+        const userid=req.params.userid;
         try {
             const findEntry = await usersdairy.findAll({
-                where: { date },
+                where: { userid,date },
             });
-            return res.send({ status: 200, data: findEntry });
+            return res.send({ status: 200, entry_data: findEntry });
         } catch (err) {
             return res.send({ status: 500, data: err.message });
         }
