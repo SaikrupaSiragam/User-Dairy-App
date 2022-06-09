@@ -18,15 +18,16 @@ const DairyComponent = () => {
   const regtoken = localStorage.getItem('regtoken')
   const token = regtoken.replaceAll('"', '');
   const [userdata, setUserData] = useState([]);
-  const [startdate, setStartDate] = useState(new Date());
+  const [startdate, setStartDate] = useState(new Date().toISOString().slice(0,10));
   const [description, setDescription] = useState();
-  console.log(description);
+   const [image, setImage]=useState();
   console.log(`startdate: ${startdate}`);
   const [error, setError] = useState();
   useEffect(() => {
     async function getData() {
       const userResponse = await getUserData(token, userid);
       setUserData(userResponse.entry_data);
+      console.log(userResponse.entry_data)
     }
     getData();
   }, []);
@@ -39,6 +40,10 @@ const DairyComponent = () => {
     {
       name: "Date",
       selector: (row) => row.date
+    },
+    {
+      name: 'Image',
+      selector:(row)=>row.image
     },
     {
       name: 'Action',
@@ -93,15 +98,15 @@ const DairyComponent = () => {
     },
     async onSubmit(values) {
       console.log(`description ${description}`)
-      const body = {
-        userid: userid,
-        date: startdate,
-        description: description,
-      }
-      console.log(body)
+      const formdata=new FormData()
+      formdata.append('image', image)
+      formdata.append('userid',userid)
+      formdata.append('date',startdate)
+      formdata.append('description',description)
+      
       console.log(token)
       console.log(userid, description);
-      axios.post(`/usersdairy/${userid}`, body, {
+      axios.post(`/usersdairy/${userid}`, formdata, {
         headers: {
           authorization: token,
         },
@@ -109,7 +114,7 @@ const DairyComponent = () => {
         .then((response) => {
           console.log("inside then")
           console.log(response)
-          window.location.reload(true);
+         window.location.reload(true);
         })
         .catch((errors) => {
           console.log(`error catch ${errors.response.data.error}`);
@@ -118,11 +123,11 @@ const DairyComponent = () => {
     },
   });
 
-  async function getNewData(token, e) {
+  async function getNewData(token,userid, e) {
     console.log("inside function")
     setStartDate(e.target.value)
     const newDate = e.target.value;
-    const newData = await getUserDataByDate(token, newDate);
+    const newData = await getUserDataByDate(token,userid, newDate);
     console.log(newData.entry_data);
     setUserData(newData.entry_data);
   }
@@ -133,6 +138,8 @@ const DairyComponent = () => {
       <div className='dairy'>
         <Form
           onSubmit={formik.handleSubmit}
+          encType='multipart/form-data'
+          method='POST'
           className="dairy-container">
           <FormGroup>
             <input
@@ -142,6 +149,7 @@ const DairyComponent = () => {
               onChange={e => setDescription(e.target.value)}
               placeholder="Enter description"
               required />
+              <input type='file' name='image' onChange={(e)=>setImage(e.target.files[0])} required/>
             <Button color="primary" type="submit" className="mainbutton-container" >
               Add New Note
             </Button>
@@ -151,7 +159,7 @@ const DairyComponent = () => {
           )}</p>
         </Form>
         <p>{error}</p>
-        <input className="date" type='date' value={startdate} onChange={e => getNewData(token, e)} />
+        <input className="date" type='date' value={startdate} onChange={e => getNewData(token,userid, e)} />
         <button className='logout'
           onClick={() => {
             localStorage.clear()

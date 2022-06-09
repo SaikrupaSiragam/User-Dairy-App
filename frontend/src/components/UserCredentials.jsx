@@ -108,7 +108,7 @@ const UserCredentialsComponent = () => {
             onClick={() => {
               const id = row.id
               const dataUpdate = deleteCredentials(token, id);
-              window.location.reload(true);
+              window.location.reload(true)
             }}
           >Delete</BsTrash>
           <BiEdit
@@ -201,7 +201,7 @@ const UserCredentialsComponent = () => {
         </FormGroup>
         <FormGroup>
           <Input
-            type="text"
+            type="password"
             name="password"
             onChange={formik.handleChange}
             value={formik.values.password}
