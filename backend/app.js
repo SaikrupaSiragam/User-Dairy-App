@@ -3,16 +3,21 @@ const bodyParser = require("body-parser")
 const app = express()
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true  }))
+var path = require('path');
 const PORT = 3001
 
 app.listen(PORT, () => {
     console.log(`Server is listening to port ${PORT}`)
 })
 
+
 var usersRouter = require('./routes/users');
 var dairyRouter = require('./routes/usersdairy');
 var credentialsRouter = require("./routes/usercredentials");
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/uploads',express.static('./uploads'));
 
 app.use('/users', usersRouter);
 app.use('/usersdairy', dairyRouter);
