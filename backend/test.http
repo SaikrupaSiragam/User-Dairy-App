@@ -1,0 +1,96 @@
+
+POST http://localhost:3001/users/signup
+Content-Type: application/json
+
+{
+    "name": "Prem Kumar",
+    "age": 24,
+    "email": "premkumar32@gmail.com",
+    "password": "PremKumar"
+}
+
+POST http://localhost:3001/users/login
+Content-Type: application/json
+
+{
+    "email": "anuradha234@gmail.com",
+    "password": "Anuradhaa"
+}
+
+GET http://localhost:3001/images/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NTY5ODk2NiwiZXhwIjoxNjU1NzA0MTY2fQ.QJDS91nxpQU0dU47T5nyUAv9e7yHX6eeoPmyCQF34bI
+
+GET http://localhost:3001/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6InByZW1rdW1hcjMyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiUHJlbUt1bWFyIn0sImlhdCI6MTY1NTQ0NzIxNywiZXhwIjoxNjU1NDUyNDE3fQ.XH9ntUXBQ5QYl80k0h1bSHqVlyU2oB6kiBg1uwZLG70
+
+GET http://localhost:3001/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDUwNDgyOSwiZXhwIjoxNjU0NTEwMDI5fQ.rSswVrQ3jZ2kAg_1iJQMD7m57KYW1ArVajWS12b86Y8
+
+GET http://localhost:3001/usersdairy
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6InByZW1rdW1hcjMyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiUHJlbUt1bWFyIn0sImlhdCI6MTY1NTQ0NzIxNywiZXhwIjoxNjU1NDUyNDE3fQ.XH9ntUXBQ5QYl80k0h1bSHqVlyU2oB6kiBg1uwZLG70
+
+GET http://localhost:3001/usersdairy/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDc1NjU3NiwiZXhwIjoxNjU0NzYxNzc2fQ.siQxCrajywoeZ4q1bKVMyZOwbTziAaSUd69wtQ8Gp0Y
+
+GET http://localhost:3001/usersdairy/1/2022-06-02
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDc0NTgwNiwiZXhwIjoxNjU0NzUxMDA2fQ.BvFrLB3ZLjOq5v0-wn8u7voGYhEUSfksOo1CrorAF1A
+
+POST http://localhost:3001/usersdairy/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDc1NjU3NiwiZXhwIjoxNjU0NzYxNzc2fQ.siQxCrajywoeZ4q1bKVMyZOwbTziAaSUd69wtQ8Gp0Y
+
+{   
+    "userid": 1,
+    "description": "detailes",
+    "date": "2022-06-02"
+}
+
+PUT  http://localhost:3001/usersdairy/9
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDUwNDgyOSwiZXhwIjoxNjU0NTEwMDI5fQ.rSswVrQ3jZ2kAg_1iJQMD7m57KYW1ArVajWS12b86Y8
+
+{   
+    "userid": 2,
+    "description": "Good Day",
+    "date":"2022-06-06"
+}
+
+DELETE http://localhost:3001/usersdairy/7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDUwNDgyOSwiZXhwIjoxNjU0NTEwMDI5fQ.rSswVrQ3jZ2kAg_1iJQMD7m57KYW1ArVajWS12b86Y8
+
+GET http://localhost:3001/usercredentials/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDUxNzkxOCwiZXhwIjoxNjU0NTIzMTE4fQ.EH1opxtNmgrENqxvuwXfc18BKvnO6gzZjH_JaiuUDo8
+
+POST http://localhost:3001/usercredentials/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDYwODU2NiwiZXhwIjoxNjU0NjEzNzY2fQ.4iEXtaooxmHCejNr4seHeeeBaFT95IJBaCcOQhaRmAg
+
+{   "userid":2,
+    "platform": "Buyjuice",
+    "email": "anuradha234@gmail.com",
+    "password":"anu123radha"
+}
+
+DELETE http://localhost:3001/usercredentials/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDY4NTIwOCwiZXhwIjoxNjU0NjkwNDA4fQ.GBvAVkeqdzEeu7RsqpzOCuqALeM9iefZX-b0z05_N3I
+
+PUT  http://localhost:3001/usercredentials/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDUxNzkxOCwiZXhwIjoxNjU0NTIzMTE4fQ.EH1opxtNmgrENqxvuwXfc18BKvnO6gzZjH_JaiuUDo8
+
+{   
+    "platform": "juices",
+    "email": "anuradha234@gmail.com",
+    "password":"anu123radha"
+}
+
+GET http://localhost:3001/usercredentials/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NTY5ODk2NiwiZXhwIjoxNjU1NzA0MTY2fQ.QJDS91nxpQU0dU47T5nyUAv9e7yHX6eeoPmyCQF34bI
+
+POST http://localhost:3001/images/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6ImFudXJhZGhhMjM0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiQW51cmFkaGFhIn0sImlhdCI6MTY1NDYwODU2NiwiZXhwIjoxNjU0NjEzNzY2fQ.4iEXtaooxmHCejNr4seHeeeBaFT95IJBaCcOQhaRmAg
+
+{   
+    "usersdairy_id":1
+}
